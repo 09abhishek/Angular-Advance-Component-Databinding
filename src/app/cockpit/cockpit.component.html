@@ -1,0 +1,20 @@
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints!</p>
+    <label>Server Number</label>
+    <!--Two way binding method-->
+    <input type="text" class="form-control" [(ngModel)]="newServerVal">
+    <label>Server Name</label>
+    <!--<input type="text" class="form-control" [(ngModel)]="newServerName">-->
+    <input type="text" class="form-control" #serverNameInput>
+    <label>Server Content</label>
+   <!--we can write value here also using this method {{ serverNameInput.value }}-->
+    <input type="text" class="form-control" #serverContentInput>
+    <br>
+    <button
+      class="btn-success" (click)="onAddServer(serverNameInput)">Add Server</button>
+    <button
+      class="btn-default" (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
+  </div>
+</div>

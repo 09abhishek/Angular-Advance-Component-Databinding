@@ -1,0 +1,21 @@
+<div class="container">
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (bluprintevent)="onBlueprintAdded($event)">
+  </app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-info" (click)="onChangeFirst()">Change First Element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">On Destroy Method</button>
+      <app-server-element
+        *ngFor= "let serverelement of serverElements" [srvElement]="serverelement"
+        [name]="serverelement.name">
+        <p #contentParagraph>
+          <strong *ngIf="serverelement.type === 'server'" style="color: deeppink">{{ serverelement.val }} . {{ serverelement.content }}</strong>
+          <em *ngIf="serverelement.type === 'blueprint'">{{ serverelement.content }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>
